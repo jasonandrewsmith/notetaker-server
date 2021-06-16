@@ -1,0 +1,22 @@
+{
+  "name": "note-taker-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "(NODE_ENV=test npx nodemon --trace-warnings index.local.js ) | npx pino-pretty -c -t"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.9",
+    "pino": "^6.11.3",
+    "serverless-http": "^2.7.0"
+  },
+  "devDependencies": {
+    "serverless-dotenv-plugin": "^3.9.0"
+  }
+}
