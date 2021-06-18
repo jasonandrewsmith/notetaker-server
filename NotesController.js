@@ -33,6 +33,9 @@ NotesController.patch('/:id', async (req, res, next) => {
     let db = req.app.get('db');
     let collection = db.collection('notes');   
 
+    console.log("Body: " + body);
+    body.updatedDate = Date.now();
+
     let updatedDoc = await collection.findOneAndUpdate(
         { _id: new ObjectId(req.params.id) },
         { $set: body },

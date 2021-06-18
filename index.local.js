@@ -15,7 +15,7 @@ const CORS_ORIGIN = process.env.CORS_ORIGIN;
 const CORS_OPTIONS = {
     origin: CORS_ORIGIN,
     optionsSuccessStatus: 200,
-    credentials: true
+    methods: 'GET,POST,PATCH,DELETE,OPTIONS'
 };
 
 let dbConnection = null;
@@ -32,7 +32,8 @@ let dbConnection = null;
     });
 
     app.use(express.json());
-    app.use(cors(CORS_OPTIONS));
+    // app.use(cors(CORS_OPTIONS));
+    app.use(cors('*'));
     app.use(pathLogger);
     
     app.get(API_BASE_URL+'/', (req, res) => {
