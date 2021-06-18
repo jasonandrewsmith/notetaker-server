@@ -32,7 +32,7 @@ process.on('SIGINT', () => {
 
 app.use(express.json());
 // app.use(cors(CORS_OPTIONS));
-pp.use(cors('*'));
+app.use(cors('*'));
 app.use(pathLogger);
 
 app.get(API_BASE_URL+'/', (req, res) => {
